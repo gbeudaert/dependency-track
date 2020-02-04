@@ -78,6 +78,7 @@ public class EventSubsystemInitializer implements ServletContextListener {
         EVENT_SERVICE.subscribe(NpmAuditAnalysisEvent.class, NpmAuditAnalysisTask.class);
         EVENT_SERVICE.subscribe(OssIndexAnalysisEvent.class, OssIndexAnalysisTask.class);
         EVENT_SERVICE.subscribe(NpmAdvisoryMirrorEvent.class, NpmAdvisoryMirrorTask.class);
+        EVENT_SERVICE.subscribe(RedHatErrataAnalysisEvent.class, RedHatErrataAnalyzerTask.class);
         EVENT_SERVICE.subscribe(VulnDbSyncEvent.class, VulnDbSyncTask.class);
         EVENT_SERVICE.subscribe(VulnDbAnalysisEvent.class, VulnDbAnalysisTask.class);
         EVENT_SERVICE.subscribe(VulnerabilityAnalysisEvent.class, VulnerabilityAnalysisTask.class);

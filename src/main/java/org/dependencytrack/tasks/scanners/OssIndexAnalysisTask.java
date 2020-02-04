@@ -122,7 +122,9 @@ public class OssIndexAnalysisTask extends BaseComponentAnalyzerTask implements S
      * @return true if OssIndexAnalysisTask should analyze, false if not
      */
     public boolean shouldAnalyze(final PackageURL purl) {
-        return purl != null && !isCacheCurrent(Vulnerability.Source.OSSINDEX, API_BASE_URL, purl.toString());
+        return purl != null 
+        		&& !"rpm".equalsIgnoreCase(purl.getType()) 
+        		&& !isCacheCurrent(Vulnerability.Source.OSSINDEX, API_BASE_URL, purl.toString());
     }
 
     /**
